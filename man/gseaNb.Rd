@@ -120,6 +120,8 @@ outputs or "readGseaFile" object, defalut is NULL.}
 \item{base_size}{the plot theme font size, defalut is 12.}
 
 \item{ncol}{the columns for newGSEA plot with multiple terms, defalut is 1}
+
+\item{yLabelRanked}{Y axis label for ranked list on subplot 3. Default is "Ranked List"}
 }
 \value{
 ggplot2 object
