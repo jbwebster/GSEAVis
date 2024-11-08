@@ -63,6 +63,7 @@
 #' @param pFill the pvalue table fill color when you plot multiple terms with newGsea plot, defalut is transparent.
 #' @param base_size the plot theme font size, defalut is 12.
 #' @param ncol the columns for newGSEA plot with multiple terms, defalut is 1
+#' @param yLabelRanked Y axis label for ranked list on subplot 3. Default is "Ranked List"
 #'
 #' @importFrom ggplot2 aes_
 #' @import DOSE
@@ -143,7 +144,8 @@ gseaNb <- function(object = NULL,
                    ght.facet.scale = "free",
                    termID.order = NULL,
                    rank.gene = NULL,
-                   rank.gene.nudgey = 2) {
+                   rank.gene.nudgey = 2,
+                   yLabelRanked = "Ranked List") {
   ##################################################################################
   # prepare data for plot
   ##################################################################################
@@ -806,7 +808,7 @@ gseaNb <- function(object = NULL,
                                                  l = .2,
                                                  unit = "cm")) +
     ggplot2::coord_cartesian(expand = 0) +
-    ggplot2::ylab("Ranked List") +
+    ggplot2::ylab(yLabelRanked) +
     ggplot2::xlab("Rank in Ordered Dataset")
 
   if(add.geneExpHt == TRUE){
